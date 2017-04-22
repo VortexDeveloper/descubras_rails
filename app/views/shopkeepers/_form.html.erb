@@ -1,0 +1,17 @@
+<%= form_with(model: shopkeeper, local: true) do |f| %>
+  <% if shopkeeper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shopkeeper.errors.count, "error") %> prohibited this shopkeeper from being saved:</h2>
+
+      <ul>
+      <% shopkeeper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
